@@ -17,7 +17,7 @@ NEW CONCEPTS
         Use the "print()" function by putting a string of text inside of the ()
     
     Strings
-        In programming we usually put text in quotes, like "this" or "this sentence right here!"
+        In programming, we usually put text in quotes, like "this" or "this sentence right here!"
         This is called a "string". Basically, it's just some words inside of quotes.
         Strings help the program understand that something is just plain text, rather than being code it should analyze.
 
