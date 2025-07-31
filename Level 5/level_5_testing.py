@@ -112,15 +112,14 @@ class BitsBot(commands.Bot):
             words = message.content.lower().split()
             for word in words:
                 # Common cheer patterns: cheer100, kappa50, pogchamp25, etc.
-                if any(word.startswith(cheer) for cheer in ['cheer', 'kappa', 'pogchamp']):
-                    # Extract number from the end of the cheer
-                    import re
-                    match = re.search(r'(\d+)$', word)
-                    if match:
-                        try:
-                            bits_amount += int(match.group(1))
-                        except (ValueError, TypeError):
-                            pass
+                import re
+                # Match anything that starts with a common cheer patern followed by a number
+                match = re.search(r'^(cheer|kappa|pogchamp)(?P<bits>\d+)$', word)
+                if match:
+                    try:
+                        bits_amount += int(match.group('bits'))
+                    except (ValueError, TypeError):
+                        pass
         
         return bits_amount
     
